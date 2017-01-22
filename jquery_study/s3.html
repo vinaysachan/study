@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type = "text/javascript" src = "plugin/jquery-3.1.1.min.js"></script>
+        <style>
+            .selected { color:red; }
+            .highlight { background:yellow; }
+        </style>
+    </head>
+    <body>
+        <p id="myid1">My Id 1</p>
+        <div id="dynamichtml"></div>
+
+        <script>
+            $(document).ready(function () {
+                $('#myid1').click(function () {
+                    alert('Normail Event Handel');
+                });
+
+                $('#dynamichtml').on('click', '#myid3', function () {
+                    alert('Normail Event Handel 3');
+                });
+                
+
+
+                //                on :-  method (arg1,arg2,agr3)
+                //arg2 :- selector
+                //agr1 :- event
+                //arg3 :- handler // function()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                $('#dynamichtml').html('<p id="myid3">My Id 3</p><p id="myid4">My Id 4</p><p id="myid5">My Id 5</p>');
+
+
+
+
+
+
+
+
+            });
+        </script>
+    </body>
+</html>

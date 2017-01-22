@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type = "text/javascript" src = "plugin/jquery-3.1.1.min.js"></script>
+        <style>
+            .selected { color:red; }
+            .highlight { background:yellow; }
+        </style>
+    </head>
+    <body>
+
+        <em title="Bold and Brave">This is first paragraph.</em>
+        <p id="myid">This is second paragraph.</p>
+        <div id="divid"></div>
+
+        <p id="myid1" title="title 1" class="highlight">sadhgfas EFSD FDSF DS AFSDA</p>
+
+        <script>
+            $(document).ready(function () {
+                var title = $('em').attr('title');
+                $('#divid').text(title);
+                $('em').attr('title', 'title is taken ');
+
+
+                $('#myid1').click(function () {
+                    if ($('#myid1').hasClass('highlight')) {
+                        $('#myid1').addClass('selected');
+                        $('#myid1').removeClass('highlight').attr('title','title attr Added');
+                    } else {
+                        $('#myid1').addClass('highlight').removeClass('selected').removeAttr('title');
+                    }
+                });
+
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type = "text/javascript" src = "plugin/jquery-3.1.1.min.js"></script>
+        <style>
+            .selected { color:red; }
+            .highlight { background:yellow; }
+        </style>
+    </head>
+    <body>
+        ajax : -  $.ajax(); <br/>
+
+        #url :- 
+        #method :- GET {Query String} / POST {object} <br/>
+        #async :- true / false<br/>
+        #beforeSend :- (fun) <br/>
+        #cache :-<br/>
+        #complete :- (function)<br/>
+        #contents :- <br/>
+        #contentType :- <br/>
+        #data :- 
+        #dataType :-
+        #context :- location<br/>
+        #crossdOMAIN :-<br/>
+        #error :_<br/>
+        #success<br/>
+
+
+
+
+
+
+
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: 'php_page.php',
+                    method: 'POST',
+                    data: {k1: 'v1'},
+                    beforeSend: function () {
+                        console.log('Requesyt Start');
+                    }
+                }).done(function (r) { // r is our content
+                    console.log(r);
+                }).fail(function (jqXHR, textStatus) {
+                    console.log(jqXHR);
+                    console.log(textStatus);
+                }).always(function () {
+                    console.log('complete');
+                });
+
+
+
+                $.post('url', 'data', function (r) {
+                    //r
+                }, 'json').always(function () {
+                    console.log('complete');
+                });
+
+                $.get('url', 'data', function (r) {
+                    //r
+                }, 'json').always(function () {
+                    console.log('complete');
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+        </script>
+    </body>
+</html>
